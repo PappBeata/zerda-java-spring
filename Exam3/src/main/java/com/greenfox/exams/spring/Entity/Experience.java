@@ -17,9 +17,9 @@ public class Experience {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
-    private String experienceText;
-    private Long rate;
-    private String email;
+    public String experienceText;
+    public Long rate;
+    public String email;
 
     public Experience() {
     }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="../static/welcome.css" th:href="@{/welcome.css}"/>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Greenfox questionnaire thank you</title>
+</head>
+<body class="bgimg">
+
+<h1>Thank you for providing your precious feedback!</h1>
+
+<p>Early access of Greenfox Academy Zerda Raptor Projects with tech tags</p>
+
+<table border="1">
+    <tr>
+        <th><label>Project name</label></th>
+        <th><label>Tech tag</label></th>
+    </tr>
+    <tr th:each="item:${projects}">
+        <td th:text="${item.projectName}"></td>
+        <td th:text="${item.framework}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

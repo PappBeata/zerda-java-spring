@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="../static/welcome.css" th:href="@{/welcome.css}"/>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Greenfox questionnaire</title>
+</head>
+<body class="bgimg">
+
+<h1>Welcome</h1>
+
+<p>Thank you for visiting our website! To get early access to our planned projects, please fill in the following quick
+    questionnaire.</p>
+
+<form action="#" th:action="@{/questionnaire/feedback}" th:object="${experience}" th:method="post">
+    <p>Describe your experience with Green Fox Academy so far:
+        <input type="text" th:field="*{experienceText}" th:required="required"/></p>
+    <p>On a scale of 1 to 10, how likely are you to recommend Green Fox Academy to a friend?
+        <input type="number" th:field="*{rate}" th:required="required"/></p>
+    <p>Your email address:
+        <input type="text" th:field="*{email}" th:required="required"/></p>
+
+    <input type="submit" value="Submit"/>
+    <input type="reset" value="Reset"/>
+
+    <p th:unless="${isIncomplete}">Please fill in the form correctly!</p>
+
+</form>
+
+</body>
+</html>

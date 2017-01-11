@@ -1,17 +1,25 @@
 package com.greenfox.exams.spring.Entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Project {
-    private String whateverText;
-    private String framework;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public Long id;
+
+    public String projectName;
+    public String framework;
 
     public Project() {
     }
 
-    public Project(String whateverText, String framework) {
-        this.whateverText = whateverText;
+    public Project(String projectName, String framework) {
+        this.projectName = projectName;
         this.framework = framework;
     }
 }
